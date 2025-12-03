@@ -92,16 +92,36 @@
     box-shadow:none!important;overflow:hidden!important;width:100%!important;min-height:clamp(360px,60vh,720px)!important}
   .heroImg img{width:100%!important;height:100%!important;object-fit:cover!important;border-radius:0!important}
 
-  /* BILLBOARD */
-  .billboard{position:relative;margin:0;padding:0;width:100%;overflow:hidden;border-radius:0}
-  .billboard .bg{width:100%;height:min(65vh,620px);object-fit:cover;display:block;filter:saturate(1.05) contrast(1.02)}
-  .billboard .overlay{background:none;}
-  .billboard .copy{position:absolute;inset:0;display:grid;align-content:end;padding:clamp(18px,5vw,44px)}
-  .billboard h2{font-size:clamp(36px,7vw,84px);line-height:.98;margin:0 0 8px}
-  .billboard p{font-size:clamp(16px,2vw,20px);margin:0;color:var(--muted)}
-  .billboard .copy{text-align:center;justify-items:center;}
-  .billboard h2,
-  .billboard p{color:#fff;}
+  /* BILLBOARD – negativer Block ohne Bild */
+  .billboard{
+    margin:0;
+    padding:clamp(48px,8vw,96px) 0;
+    width:100%;
+    border-radius:0;
+    background:var(--brand);     /* dunkler Block wie Footer */
+    color:#fff;
+  }
+  .billboard .copy{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 clamp(16px,4vw,28px);
+    text-align:center;
+    display:grid;
+    justify-items:center;
+    row-gap:16px;
+  }
+  .billboard h2{
+    font-size:clamp(36px,7vw,84px);
+    line-height:1.02;
+    margin:0;
+    letter-spacing:-.01em;
+  }
+  .billboard p{
+    font-size:clamp(16px,2vw,20px);
+    margin:0;
+    opacity:.9;
+  }
+
 
   /* SECTIONS */
   .section{padding:clamp(28px,6vw,56px) 0}
@@ -437,11 +457,9 @@
   </article>
 </div>
 
-<!-- Billboard -->
+<!-- Billboard – negativer Block ohne Foto -->
 <section class="billboard" aria-labelledby="bb1">
-  <img class="bg" src="/public/billboard1.jpg" alt="Morning light and calm scene">
-  <div class="overlay"></div>
-  <div class="copy container">
+  <div class="copy">
     <h2 id="bb1"
         data-en="A clinically grounded voice-first AI companion for mental wellbeing, hosted in the EU."
         data-de="Eine klinisch fundierte, sprachbasierte KI-Begleitung für mentale Gesundheit – gehostet in der EU.">
@@ -454,6 +472,7 @@
     </p>
   </div>
 </section>
+
 
 <!-- NEW HOW IT WORKS – iOS STYLE -->
 <section class="section howSection" id="how" aria-labelledby="how-h">

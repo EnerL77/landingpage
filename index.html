@@ -44,7 +44,18 @@
   .langBtn.is-active{border-color:var(--brand);box-shadow:0 1px 0 #dcd3ca;opacity:1;font-weight:700}
 
   @media (max-width: 820px){ .navLinks{gap:20px} .btn{padding:.8rem 1.1rem} }
-  @media (max-width: 640px){ .container{padding:16px} .logo{ width: clamp(72px, 22vw, 110px) } .navLinks{gap:16px} }
+
+  /* MOBILE: mehr Präsenz für Headline auf kleinen Screens */
+  @media (max-width: 640px){
+    .container{padding:16px}
+    .logo{ width: clamp(72px, 22vw, 110px) }
+    .navLinks{gap:16px}
+
+    h1{
+      font-size:clamp(40px, 14vw, 64px);
+      line-height:1.05;
+    }
+  }
 
   /* HERO */
   .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:stretch;margin-top:clamp(10px,2vw,20px)}
@@ -207,14 +218,14 @@
     .stepNumber{margin-bottom:6px;}
   }
 
-/* INVERSE WAITLIST */
-.section--inverse{
-  background:#1d3b44;        /* ← Neue Farbe */
-  color:#fff;
-  border-top:1px solid rgba(255,255,255,0.15);
-  border-bottom:1px solid rgba(255,255,255,0.15);
-  display:flex;
-}
+  /* INVERSE WAITLIST */
+  .section--inverse{
+    background:#1d3b44;
+    color:#fff;
+    border-top:1px solid rgba(255,255,255,0.15);
+    border-bottom:1px solid rgba(255,255,255,0.15);
+    display:flex;
+  }
   .section--inverse > .container{margin:auto;}
   .section--inverse .waitlist{
     background:transparent;
@@ -803,8 +814,8 @@
     btn.addEventListener('click', ()=>applyLang(btn.dataset.lang));
   });
 
-  // Startsprache
-  applyLang('en');
+  // Startsprache: Deutsch
+  applyLang('de');
 </script>
 </body>
 </html>
